@@ -1,0 +1,17 @@
+---
+layout: "page"
+---
+
+.code-container
+  h2 Javascript
+  pre.prettyprint.lang-html= content
+  input(type="submit", value="Submit")
+
+.result-container
+  h2 Resultz
+  .result!= content
+
+script
+  $(function (argument) {
+     $('button').click();
+  });

@@ -1,14 +1,22 @@
 ---
 page: 1
-layout: "page"
+layout: "html-example"
 ---
+script
+  var Peanuts = Peanuts || {};
+  var g = 10;
 
-h1
-  span Navigate by using the keys
-  .icon-stack
-    i.icon-check-empty.icon-stack-base
-    i.icon-long-arrow-left
-  | and   
-  .icon-stack
-    i.icon-check-empty.icon-stack-base
-    i.icon-long-arrow-right
+  Peanuts.calculator = (function(g) { 
+    var getInitialValue = function () {
+       return g;
+    }
+     return {
+       getInitialValue: getInitialValue
+     }
+  })(g);
+
+  g = 20;
+
+   Peanuts.calculator.getInitialValue(); // 10
+
+  console.log(Peanuts.calculator()); // 10
